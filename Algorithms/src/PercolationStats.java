@@ -8,6 +8,7 @@ public class PercolationStats {
 
 	// perform trials independent experiments on an n-by-n grid
 	public PercolationStats(int n, int trials) {
+		this.trials = trials;
 		ratio = new double[trials];
 		for(int i = 0; i < trials; i++) {
 			Percolation p = new Percolation(n);
@@ -31,6 +32,8 @@ public class PercolationStats {
 
 	// sample standard deviation of percolation threshold
 	public double stddev() {
+		if(trials == 1)
+			return Double.NaN;
 		return StdStats.stddev(ratio);
 	}
 

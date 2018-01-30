@@ -10,6 +10,7 @@ public class PercolationVisualizer {
 
     // draw n-by-n percolation system
     public static void draw(Percolation perc, int n) {
+        
         StdDraw.clear();
         StdDraw.setPenColor(StdDraw.BLACK);
         StdDraw.setXscale(-0.05 * n, 1.05 * n);
